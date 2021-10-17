@@ -1,0 +1,36 @@
+.main-container {
+  background-color: var(--ion-color-background);
+  border: 1px solid var(--ion-color-secondary-tint);
+  border-radius: 5px;
+  padding: 0.5rem;
+  .short-info-container {
+    font-size: smaller;
+    .site-text {
+      color: var(--ion-color-secondary-tint);
+    }
+    .date-text {
+      color: var(--ion-color-secondary-shade);
+    }
+  }
+
+  .image-container {
+    padding: 0.5rem;
+    text-align: center;
+    img {
+      height: 125px;
+    }
+  }
+  .header-container {
+    font-weight: bolder;
+    font-size: large;
+    padding: 0.5rem;
+  }
+  .read-more-container {
+    color: var(--ion-color-secondary-shade);
+    font-size: smaller;
+    justify-content: end;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+}

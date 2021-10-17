@@ -1,0 +1,7 @@
+{
+  "name": "spaceflights",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

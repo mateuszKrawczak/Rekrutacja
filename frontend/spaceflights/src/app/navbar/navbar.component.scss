@@ -1,0 +1,30 @@
+ion-header {
+  color: var(--ion-color-secondary);
+  background-color: var(--ion-color-background);
+  padding: 1rem;
+  .menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .header-text {
+    font-weight: bold;
+    font-size: larger;
+    ion-icon {
+      margin-right: 10px;
+    }
+  }
+}
+.nav-link {
+  padding: 1rem;
+  cursor: pointer;
+  ion-icon {
+    margin-right: 10px;
+  }
+}
+.router-link-active {
+  color: var(--ion-color-secondary-tint);
+}
+ion-menu {
+  color: var(--ion-color-secondary);
+  --background: var(--ion-color-background);
+}

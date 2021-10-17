@@ -1,0 +1,16 @@
+<ion-row
+  class="main-container"
+  fxFlex.xs="100"
+  fxFlexOffset.xs="0"
+  fxFlex.gt-sm="40"
+  fxFlexOffset.gt-sm="30"
+>
+  <ion-col *ngIf="articles$ | async as articles">
+    <ng-container *ngFor="let article of articles">
+      <app-article-short-details
+        class="details-container"
+        [article]="article"
+      ></app-article-short-details>
+    </ng-container>
+  </ion-col>
+</ion-row>

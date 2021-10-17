@@ -1,0 +1,26 @@
+<div class="main-container" *ngIf="article">
+  <div class="image-container">
+    <img [src]="article.imageUrl" />
+  </div>
+  <ion-col class="content-container" fxLayout="column">
+    <div class="header-container">
+      <ion-text>{{ article.title }}</ion-text>
+    </div>
+    <div
+      class="short-details-container"
+      fxLayout="row"
+      fxLayoutAlign="center center"
+    >
+      <ion-text class="site-text">{{ article.newsSite }}</ion-text>
+      <ion-text class="date-text">{{
+        article.publishedAt | date: "MMM d, yyyy"
+      }}</ion-text>
+    </div>
+    <div class="summary-container">
+      {{ article.summary }}
+    </div>
+    <div class="footer">
+      Source: <a [href]="article.url">{{ article.url }}</a>
+    </div>
+  </ion-col>
+</div>

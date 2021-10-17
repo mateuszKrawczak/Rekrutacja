@@ -1,0 +1,33 @@
+<div class="main-container">
+  <ion-col class="ion-no-padding">
+    <div
+      class="short-info-container"
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+    >
+      <ion-text class="site-text">{{ article.newsSite }}</ion-text>
+      <ion-text class="date-text">{{
+        article.publishedAt | date: "MMM d"
+      }}</ion-text>
+    </div>
+    <div>
+      <ion-row>
+        <ion-col class="image-container"
+          ><img
+            class="clickable"
+            (click)="navigate()"
+            [src]="article.imageUrl"
+          />
+        </ion-col>
+        <ion-col
+          ><div class="header-container clickable" (click)="navigate()">
+            {{ article.title }}
+          </div></ion-col
+        ></ion-row
+      >
+      <ion-row class="read-more-container clickable" (click)="navigate()"
+        >Read more...</ion-row
+      >
+    </div>
+  </ion-col>
+</div>

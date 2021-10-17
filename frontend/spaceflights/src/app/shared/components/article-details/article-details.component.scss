@@ -1,0 +1,38 @@
+.main-container {
+  background-color: var(--ion-color-background);
+  height: 100%;
+  img {
+    width: 100em;
+  }
+  .content-container {
+    padding: 2rem;
+    max-width: 80%;
+    margin: auto;
+    .short-details-container {
+      padding: 2rem 0;
+      font-size: small;
+
+      .site-text {
+        font-weight: bold;
+        margin-right: 1rem;
+      }
+    }
+    .header-container {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    .summary-container {
+      text-align: justify;
+      font-size: large;
+    }
+    .footer {
+      padding-top: 2rem;
+      a {
+        text-decoration: none;
+        color: var(--ion-color-secondary-tint);
+        font-weight: bold;
+      }
+    }
+  }
+}
