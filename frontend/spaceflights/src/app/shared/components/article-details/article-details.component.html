@@ -1,26 +1,114 @@
-<div class="main-container" *ngIf="article">
-  <div class="image-container">
+<ion-content
+  class="main-container ion-no-padding"
+  *ngIf="article$ | async as article"
+>
+  <div
+    class="image-container"
+    fxLayout="row"
+    fxFlex="100"
+    fxFlex.gt-md="50"
+    fxFlexOffset.gt-md="25"
+  >
     <img [src]="article.imageUrl" />
   </div>
-  <ion-col class="content-container" fxLayout="column">
-    <div class="header-container">
-      <ion-text>{{ article.title }}</ion-text>
-    </div>
-    <div
-      class="short-details-container"
-      fxLayout="row"
-      fxLayoutAlign="center center"
+  <ion-row fxFlex="100" fxFlex.gt-md="50" fxFlexOffset.gt-md="25">
+    <ion-col
+      fxFlex="30"
+      fxHide
+      fxShow.gt-md
+      class="articles-container"
+      fxLayout="column"
     >
-      <ion-text class="site-text">{{ article.newsSite }}</ion-text>
-      <ion-text class="date-text">{{
-        article.publishedAt | date: "MMM d, yyyy"
-      }}</ion-text>
+      <div class="container">
+        <div class="header-text" fxLayout="row" fxLayoutAlign="center center">
+          <ion-icon name="calendar"></ion-icon>
+          <ion-text>Events</ion-text>
+        </div>
+        <ng-container *ngIf="events$ | async as events; else noEvents">
+          <app-article-short-details
+            class="details-container"
+            *ngFor="let event of events[0]"
+            [article]="event"
+          ></app-article-short-details>
+        </ng-container>
+      </div>
+      <div class="container">
+        <div class="header-text" fxLayout="row" fxLayoutAlign="center center">
+          <ion-icon name="rocket"></ion-icon>
+          <ion-text>Launches</ion-text>
+        </div>
+        <ng-container *ngIf="launches$ | async as launches; else noLaunches">
+          <app-article-short-details
+            fxLayout="row"
+            class="details-container"
+            *ngFor="let launch of launches[0] as launches"
+            [article]="launch"
+          ></app-article-short-details>
+        </ng-container>
+      </div>
+    </ion-col>
+    <ion-col
+      fxFlex="100"
+      fxFlex.gt-md="70"
+      class="content-container"
+      fxLayout="column"
+    >
+      <div class="header-container">
+        <ion-text>{{ article.title }}</ion-text>
+      </div>
+      <div
+        class="short-details-container"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+      >
+        <ion-text class="site-text">{{ article.newsSite }}</ion-text>
+        <ion-text class="date-text">{{
+          article.publishedAt | date: "MMM d, yyyy"
+        }}</ion-text>
+      </div>
+      <div class="summary-container">
+        {{ article.summary }}
+      </div>
+      <div class="footer">
+        Source: <a [href]="article.url">{{ article.url }}</a>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-col fxHide.gt-md>
+    <div class="header-text" fxLayout="row" fxLayoutAlign="center center">
+      <ion-icon name="rocket"></ion-icon>
+      <ion-text>Launches</ion-text>
     </div>
-    <div class="summary-container">
-      {{ article.summary }}
+    <ion-slides>
+      <ng-container *ngIf="launches$ | async as launches; else noLaunches">
+        <ion-slide *ngFor="let item of launches[0]">
+          <app-article-short-details
+            fxLayout="row"
+            class="details-container"
+            [article]="item"
+          ></app-article-short-details> </ion-slide
+      ></ng-container>
+    </ion-slides>
+    <div class="header-text" fxLayout="row" fxLayoutAlign="center center">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-text>Events</ion-text>
     </div>
-    <div class="footer">
-      Source: <a [href]="article.url">{{ article.url }}</a>
-    </div>
+    <ion-slides>
+      <ng-container *ngIf="events$ | async as events; else noEvents">
+        <ion-slide *ngFor="let item of events[0]">
+          <app-article-short-details
+            fxLayout="row"
+            class="details-container"
+            [article]="item"
+          ></app-article-short-details> </ion-slide
+      ></ng-container>
+    </ion-slides>
   </ion-col>
-</div>
+</ion-content>
+
+<ng-template #noLaunches
+  ><div class="center">No launches assigned to article</div></ng-template
+>
+<ng-template #noEvents
+  ><div class="center">No events assigned to article</div></ng-template
+>

@@ -18,6 +18,10 @@ constructor(private http: HttpClient ) {}
   }
 
   getArticleLaunchDetails(id: string){
-    return this.http.get<Article>(`${this.apiUrl}articles/${id}`);
+    return this.http.get<Article>(`${this.apiUrl}articles/launch/${id}`);
+  }
+
+  getArticleEventDetails(id: number){
+    return this.http.get<Article>(`${this.apiUrl}articles/event/${id}`);
   }
 }

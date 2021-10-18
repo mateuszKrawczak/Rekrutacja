@@ -15,6 +15,11 @@ const routes: Routes = [
   {
     path: 'favourites',
     component:FavouritesComponent
+  },
+  {
+    path: '',
+    redirectTo:'articles',
+    pathMatch:'full'
   }
 ];
 @NgModule({

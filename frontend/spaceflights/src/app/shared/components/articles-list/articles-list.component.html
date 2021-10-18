@@ -1,16 +1,28 @@
-<ion-row
-  class="main-container"
-  fxFlex.xs="100"
-  fxFlexOffset.xs="0"
-  fxFlex.gt-sm="40"
-  fxFlexOffset.gt-sm="30"
->
-  <ion-col *ngIf="articles$ | async as articles">
-    <ng-container *ngFor="let article of articles">
-      <app-article-short-details
-        class="details-container"
-        [article]="article"
-      ></app-article-short-details>
-    </ng-container>
-  </ion-col>
-</ion-row>
+<ion-col fxLayout="column" class="ion-no-padding">
+  <ion-row
+    class="search-container"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+  >
+    <ion-text class="animate-text">All space news in one place</ion-text>
+    <ion-searchbar></ion-searchbar>
+  </ion-row>
+  <ion-row>
+    <ion-col
+      fxLayout="column"
+      class="main-container"
+      fxFlex.xs="100"
+      fxFlexOffset.xs="0"
+      fxFlex.gt-sm="40"
+      fxFlexOffset.gt-sm="30"
+    >
+      <ion-col *ngIf="articles$ | async as articles">
+        <ng-container *ngFor="let article of articles">
+          <app-article-short-details
+            class="details-container"
+            [article]="article"
+          ></app-article-short-details>
+        </ng-container>
+      </ion-col> </ion-col
+  ></ion-row>
+</ion-col>

@@ -5,7 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
-import { ArticleShortDetailsComponent } from './components/articles-list/article-short-details/article-short-details.component';
+import { ArticleShortDetailsComponent } from './components/article-short-details/article-short-details.component';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
 import { ArticlesService } from './services/articles.service';
 @NgModule({
