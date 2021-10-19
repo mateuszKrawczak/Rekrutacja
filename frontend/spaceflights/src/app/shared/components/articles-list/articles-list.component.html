@@ -5,7 +5,7 @@
     fxLayoutAlign="center center"
   >
     <ion-text class="animate-text">All space news in one place</ion-text>
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar [formControl]="filter"></ion-searchbar>
   </ion-row>
   <ion-row>
     <ion-col
@@ -16,13 +16,17 @@
       fxFlex.gt-sm="40"
       fxFlexOffset.gt-sm="30"
     >
-      <ion-col *ngIf="articles$ | async as articles">
+      <ion-col *ngIf="filteredArticles$ | async as articles">
         <ng-container *ngFor="let article of articles">
           <app-article-short-details
             class="details-container"
             [article]="article"
           ></app-article-short-details>
         </ng-container>
-      </ion-col> </ion-col
-  ></ion-row>
+        <div class="not-found-articles" *ngIf="articles.length === 0">
+          No articles found
+        </div>
+      </ion-col>
+    </ion-col></ion-row
+  >
 </ion-col>

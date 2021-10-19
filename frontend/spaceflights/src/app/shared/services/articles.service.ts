@@ -9,7 +9,7 @@ apiUrl = environment.api;
 constructor(private http: HttpClient ) {}
 
 
-  getArticles(){
+  getArticles(filterName?: string){
     return this.http.get<Article[]>(`${this.apiUrl}articles`);
   }
 

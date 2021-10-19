@@ -25,8 +25,21 @@
           </div></ion-col
         ></ion-row
       >
-      <ion-row class="read-more-container clickable" (click)="navigate()"
-        >Read more...</ion-row
+      <ion-row
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+        class="options-container clickable"
+        ><ion-button
+          fill="clear"
+          class="star-button"
+          (click)="
+            article.isFavourite = !article.isFavourite; favouriteArticleChange()
+          "
+          ><ion-icon
+            slot="icon-only"
+            [name]="article.isFavourite ? 'star' : 'star-outline'"
+          ></ion-icon></ion-button
+        ><ion-text (click)="navigate()"> Read more...</ion-text></ion-row
       >
     </div>
   </ion-col>

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
@@ -14,7 +15,8 @@ import { ArticlesService } from './services/articles.service';
     IonicModule,
     HttpClientModule,
     FlexLayoutModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   declarations: [ArticleDetailsComponent, ArticlesListComponent, ArticleShortDetailsComponent],
   providers:[ArticlesService],

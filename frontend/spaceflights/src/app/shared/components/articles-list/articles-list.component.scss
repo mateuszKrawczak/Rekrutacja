@@ -1,8 +1,8 @@
 .search-container {
-  background-image: url("../../../../assets/space.png");
+  background-image: url("../../../../assets/backgroundGif.gif");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 40vh;
+  height: 60vh;
   ion-searchbar {
     width: 90%;
     margin: auto;
@@ -36,4 +36,9 @@ ion-col {
   .details-container {
     margin: 0 0.2rem;
   }
+}
+.not-found-articles {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
 }

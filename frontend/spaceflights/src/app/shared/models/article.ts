@@ -10,6 +10,7 @@ summary: string;
 publishedAt: string;
 launches: LaunchData[];
 events: EventData[];
+isFavourite?: boolean;
 }
 
 export interface LaunchData{
