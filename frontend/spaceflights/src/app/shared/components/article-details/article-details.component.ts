@@ -4,7 +4,7 @@ import { BehaviorSubject, forkJoin, Observable, of } from 'rxjs';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { Article } from '../../models/article';
 import { ArticlesService } from '../../services/articles.service';
-import { ToastService } from '../../services/toast.service';
+import { FavouriteArticlesService } from '../../services/favourite-articles.service';
 @Component({
   changeDetection:ChangeDetectionStrategy.OnPush,
   selector: 'app-article-details',
@@ -28,8 +28,7 @@ export class ArticleDetailsComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute,
-    private router: Router, private articlesService: ArticlesService,
-    private toastService: ToastService) {
+    private router: Router, private articlesService: ArticlesService, private favouriteArticlesService: FavouriteArticlesService) {
    }
 
    ngOnInit(): void {
@@ -53,8 +52,7 @@ export class ArticleDetailsComponent implements OnInit {
     this.router.navigate(['/articles']);
   }
 
-  favouriteArticleChange(id: number,isFavourite: boolean){
-    const message = isFavourite ? 'Article added to favourites' : 'Article removed from favourites';
-    this.toastService.showToast(message);
+  favouriteArticleChange(article: Article){
+    this.favouriteArticlesService.updateFavouriteArticles(article);
   }
 }

@@ -28,7 +28,7 @@
       <ion-row
         fxLayout="row"
         fxLayoutAlign="space-between center"
-        class="options-container clickable"
+        class="options-container"
         ><ion-button
           fill="clear"
           class="star-button"
@@ -39,7 +39,9 @@
             slot="icon-only"
             [name]="article.isFavourite ? 'star' : 'star-outline'"
           ></ion-icon></ion-button
-        ><ion-text (click)="navigate()"> Read more...</ion-text></ion-row
+        ><ion-text class="clickable" (click)="navigate()">
+          Read more...</ion-text
+        ></ion-row
       >
     </div>
   </ion-col>

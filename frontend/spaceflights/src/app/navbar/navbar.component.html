@@ -1,6 +1,6 @@
 <ion-header fxLayout="row" fxLayoutAlign="space-between center">
   <div class="header-text" fxLayout="row" fxLayoutAlign="center center">
-    <img src="../../assets/logo_solvro.png" /> <ion-text>Spaceflights</ion-text>
+    <img src="../../assets/logo_solvro.png" /> <ion-text>SpaceFlights</ion-text>
   </div>
   <div fxHide.xs fxLayout="row" fxLayoutAlign="center center">
     <ng-container *ngTemplateOutlet="navLinks"> </ng-container>
@@ -25,6 +25,7 @@
     class="nav-link"
     [routerLink]="['/articles']"
     routerLinkActive="router-link-active"
+    (click)="closeMenu()"
   >
     <ion-icon name="list"></ion-icon>
     Articles
@@ -35,6 +36,7 @@
     class="nav-link"
     [routerLink]="['/favourites']"
     routerLinkActive="router-link-active"
+    (click)="closeMenu()"
   >
     <ion-icon name="star"></ion-icon>
     Favourites

@@ -1,6 +1,20 @@
 <ion-content>
-  <ion-col>
+  <div fxLayout="column" fxLayoutAlign="center center">
     <ion-text class="header-text">Your favourites articles</ion-text>
-    <ion-row></ion-row>
-  </ion-col>
+    <div
+      fxLayout="row wrap"
+      fxLayoutGap="32px"
+      fxLayoutAlign="center"
+      *ngIf="articles$ | async as articles"
+    >
+      <app-article-short-details
+        class="article-container"
+        *ngFor="let item of articles"
+        [article]="item"
+      ></app-article-short-details>
+      <div *ngIf="articles !== null && articles.length === 0">
+        You don't have favourite articles
+      </div>
+    </div>
+  </div>
 </ion-content>

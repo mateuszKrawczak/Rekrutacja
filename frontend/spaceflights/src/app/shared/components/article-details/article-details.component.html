@@ -23,7 +23,7 @@
         class="star-button"
         (click)="
           article.isFavourite = !article.isFavourite;
-          favouriteArticleChange(article.id, article.isFavourite)
+          favouriteArticleChange(article)
         "
         ><ion-icon
           slot="icon-only"
@@ -32,7 +32,7 @@
     ></ion-row>
     <ion-row>
       <ion-col
-        fxFlex="35"
+        fxFlex="40"
         fxHide
         fxShow.gt-md
         class="articles-container"
@@ -48,7 +48,7 @@
               <app-article-short-details
                 fxLayout="row"
                 class="details-container"
-                *ngFor="let event of events[0]"
+                *ngFor="let event of events"
                 [article]="event"
               ></app-article-short-details>
             </ng-container>
@@ -66,7 +66,7 @@
               <app-article-short-details
                 fxLayout="row"
                 class="details-container"
-                *ngFor="let launch of launches[0] as launches"
+                *ngFor="let launch of launches[0]"
                 [article]="launch"
               ></app-article-short-details>
             </ng-container>
@@ -75,7 +75,7 @@
       </ion-col>
       <ion-col
         fxFlex="100"
-        fxFlex.gt-md="65"
+        fxFlex.gt-md="60"
         class="content-container"
         fxLayout="column"
       >
@@ -89,7 +89,7 @@
         >
           <ion-text class="site-text">{{ article.newsSite }}</ion-text>
           <ion-text class="date-text">{{
-            article.publishedAt | date: "MMM d, yyyy"
+            article.publishedAt | date: "d MMM yyyy, HH:mm"
           }}</ion-text>
         </div>
         <div class="summary-container">

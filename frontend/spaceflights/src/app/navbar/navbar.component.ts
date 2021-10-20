@@ -13,4 +13,8 @@ export class NavbarComponent {
   openMenu(){
     this.menuController.open('main');
   }
+
+  closeMenu(){
+    this.menuController.close('main');
+  }
 }

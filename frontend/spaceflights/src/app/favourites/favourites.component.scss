@@ -1,4 +1,17 @@
 ion-content {
   --background: var(--ion-color-background);
   --color: var(--ion-color-secondary);
+
+  .header-text {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    text-shadow: 2px 2px var(--ion-color-background);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  .article-container {
+    margin: 1rem;
+    max-width: 350px;
+    width: 90%;
+  }
 }

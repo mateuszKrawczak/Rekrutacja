@@ -20,6 +20,6 @@ import { ArticlesService } from './services/articles.service';
   ],
   declarations: [ArticleDetailsComponent, ArticlesListComponent, ArticleShortDetailsComponent],
   providers:[ArticlesService],
-  exports:[ArticlesListComponent, IonicModule, FlexLayoutModule]
+  exports:[ArticlesListComponent, ArticleShortDetailsComponent,FlexLayoutModule]
 })
 export class SharedModule { }
