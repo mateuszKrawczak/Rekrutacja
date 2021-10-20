@@ -1,3 +1,9 @@
+Wykonałem zadanie w angularze ale wykorzystałem narzędzie Ionic przez co apka jest też dla aplikacji mobilnych.
+Uruchomienie:
+1. npm install
+2. ionic serve
+
+
 # Frontend
 
 **Termin wykonania zadania: 25.10 23:59**
