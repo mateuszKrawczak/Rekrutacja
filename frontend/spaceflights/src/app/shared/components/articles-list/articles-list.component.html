@@ -7,26 +7,20 @@
     <ion-text class="animate-text">All space news in one place</ion-text>
     <ion-searchbar [formControl]="filter"></ion-searchbar>
   </ion-row>
-  <ion-row>
-    <ion-col
-      fxLayout="column"
-      class="main-container"
-      fxFlex.xs="100"
-      fxFlexOffset.xs="0"
-      fxFlex.gt-sm="40"
-      fxFlexOffset.gt-sm="30"
+  <div>
+  <div
+      fxLayout="row wrap"
+      fxLayoutAlign="center"
+      *ngIf="filteredArticles$ | async as articles"
     >
-      <ion-col *ngIf="filteredArticles$ | async as articles">
-        <ng-container *ngFor="let article of articles">
-          <app-article-short-details
-            class="details-container"
-            [article]="article"
-          ></app-article-short-details>
-        </ng-container>
-        <div class="not-found-articles" *ngIf="articles.length === 0">
-          No articles found
-        </div>
-      </ion-col>
-    </ion-col></ion-row
-  >
+    <ng-container *ngFor="let article of articles">
+      <app-article-short-details
+        class="article-container"
+        [article]="article"
+      ></app-article-short-details>
+    </ng-container>
+      <div class="not-found-articles" *ngIf="articles.length === 0">
+        No articles found
+      </div>
+    </div></div>
 </ion-col>

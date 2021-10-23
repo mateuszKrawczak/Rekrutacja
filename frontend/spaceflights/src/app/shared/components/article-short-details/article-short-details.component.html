@@ -11,20 +11,18 @@
       }}</ion-text>
     </div>
     <div>
-      <ion-row>
-        <ion-col class="image-container"
+        <ion-row class="image-container"
           ><img
             class="clickable"
             (click)="navigate()"
             [src]="article.imageUrl"
           />
-        </ion-col>
-        <ion-col
+        </ion-row>
+        <ion-row
           ><div class="header-container clickable" (click)="navigate()">
             {{ article.title }}
-          </div></ion-col
-        ></ion-row
-      >
+          </div></ion-row
+        >
       <ion-row
         fxLayout="row"
         fxLayoutAlign="space-between center"

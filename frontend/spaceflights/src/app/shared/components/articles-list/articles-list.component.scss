@@ -16,7 +16,7 @@
     text-shadow: 2px 2px var(--ion-color-background);
     animation: topToBottom ease 2s;
     position: absolute;
-    top: 15%;
+    top: 2%;
   }
   @keyframes topToBottom {
     0% {
@@ -32,10 +32,8 @@
 .main-container {
   height: 100%;
 }
-ion-col {
-  .details-container {
-    margin: 0 0.2rem;
-  }
+.article-container {
+    margin: 0.5rem;
 }
 .not-found-articles {
   text-align: center;
