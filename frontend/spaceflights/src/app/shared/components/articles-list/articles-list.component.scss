@@ -16,7 +16,7 @@
     text-shadow: 2px 2px var(--ion-color-background);
     animation: topToBottom ease 2s;
     position: absolute;
-    top: 2%;
+    top: 50px;
   }
   @keyframes topToBottom {
     0% {
@@ -33,10 +33,15 @@
   height: 100%;
 }
 .article-container {
-    margin: 0.5rem;
+  max-width:500px;
+  width:100%;
+  margin:2rem;
 }
 .not-found-articles {
   text-align: center;
   font-size: 1.5rem;
   padding: 1rem;
+}
+.spinner-container{
+  padding:5rem 0;
 }

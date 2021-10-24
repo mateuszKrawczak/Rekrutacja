@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
 import { ArticleShortDetailsComponent } from './components/article-short-details/article-short-details.component';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 import { ArticlesService } from './services/articles.service';
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { ArticlesService } from './services/articles.service';
     RouterModule,
     ReactiveFormsModule
   ],
-  declarations: [ArticleDetailsComponent, ArticlesListComponent, ArticleShortDetailsComponent],
+  declarations: [ArticleDetailsComponent, ArticlesListComponent, ArticleShortDetailsComponent,PaginationComponent],
   providers:[ArticlesService],
   exports:[ArticlesListComponent, ArticleShortDetailsComponent,FlexLayoutModule]
 })

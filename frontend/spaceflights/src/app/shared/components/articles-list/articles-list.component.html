@@ -7,20 +7,27 @@
     <ion-text class="animate-text">All space news in one place</ion-text>
     <ion-searchbar [formControl]="filter"></ion-searchbar>
   </ion-row>
-  <div>
-  <div
-      fxLayout="row wrap"
-      fxLayoutAlign="center"
-      *ngIf="filteredArticles$ | async as articles"
-    >
-    <ng-container *ngFor="let article of articles">
-      <app-article-short-details
-        class="article-container"
-        [article]="article"
-      ></app-article-short-details>
-    </ng-container>
+  <div *ngIf="filteredArticles$ | async as articles; else loader">
+    <div fxLayout="row wrap" fxLayoutAlign="center">
+      <ng-container *ngFor="let article of articles">
+        <app-article-short-details
+          class="article-container"
+          [article]="article"
+        ></app-article-short-details>
+      </ng-container>
       <div class="not-found-articles" *ngIf="articles.length === 0">
         No articles found
       </div>
-    </div></div>
+    </div>
+    <app-pagination
+      *ngIf="articles.length !== 0"
+      [currentPage]="currentPage"
+      (pageChange)="loadArticles($event)"
+    ></app-pagination>
+  </div>
 </ion-col>
+
+<ng-template #loader>
+  <div class="spinner-container" fxLayout="row" fxLayoutAlign="center center">
+    <ion-spinner></ion-spinner></div
+></ng-template>

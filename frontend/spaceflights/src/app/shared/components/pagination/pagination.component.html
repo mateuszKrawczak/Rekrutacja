@@ -1,0 +1,10 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <ion-button
+    fill="clear"
+    (click)="previousPage()"
+    [disabled]="currentPage <= 1"
+    ><ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button
+  ><ion-button fill="clear" (click)="nextPage()"
+    ><ion-icon slot="icon-only" name="arrow-forward"></ion-icon
+  ></ion-button>
+</div>
